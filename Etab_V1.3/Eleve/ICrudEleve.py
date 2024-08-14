@@ -1,14 +1,13 @@
 from abc import ABC, abstractmethod
-# from .eleve import Eleve
 
 class ICRUDEleve(ABC):
     """
-        Interface pour les opérations CRUD sur les élèves
+    Interface pour les opérations CRUD sur les élèves
     """
 
     # Ajoute un élève
     @abstractmethod
-    def ajouter(self,  eleve): 
+    def ajouter(self, eleve): 
         pass
     
     # Modifie un élève
@@ -23,10 +22,10 @@ class ICRUDEleve(ABC):
     
     # Obtient les élèves
     @abstractmethod
-    def obtenirEleve(self) -> list:
+    def obtenir_eleve(self) -> list:
         pass
     
     # Obtient un élève par son identifiant
     @abstractmethod
-    def obtenir(self, identifiant) :
+    def obtenir(self, identifiant):
         pass

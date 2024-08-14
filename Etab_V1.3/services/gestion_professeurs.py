@@ -31,17 +31,17 @@ def modifierProfesseur():
     professeur = Professeur.obtenir(identifiant)
     if professeur:
         print(f"Modification du professeur : {professeur}")
-        # Demande des nouvelles informations et utilisation des setters
-        professeur.set_date_naissance(input("Nouvelle date de naissance (YYYY-MM-DD) : ") or professeur.get_date_naissance)
-        professeur.set_ville(input("Nouvelle ville : ") or professeur.get_ville)
-        professeur.set_prenom(input("Nouveau prénom : ") or professeur.get_prenom)
-        professeur.set_nom(input("Nouveau nom : ") or professeur.get_nom)
-        professeur.set_telephone(input("Nouveau téléphone : ") or professeur.get_telephone)
+        professeur.set_date_naissance(input("Nouvelle date de naissance (YYYY-MM-DD) : ") or professeur.get_date_naissance())
+        professeur.set_ville(input("Nouvelle ville : ") or professeur.get_ville())
+        professeur.set_prenom(input("Nouveau prénom : ") or professeur.get_prenom())
+        professeur.set_nom(input("Nouveau nom : ") or professeur.get_nom())
+        professeur.set_telephone(input("Nouveau téléphone : ") or professeur.get_telephone())
         professeur.set_vacant(input("Est-ce vacant ? (oui/non) : ").lower() == 'oui')
-        professeur.set_matiereEnseigne(input("Nouvelle matière enseignée : ") or professeur.matiereEnseigne)
-        professeur.set_prochainCours(input("Nouveau sujet du prochain cours : ") or professeur.prochainCours)
-        professeur.set_sujetProchaineReunion(input("Nouveau sujet de la prochaine réunion : ") or professeur.sujetProchaineReunion)
-        print(f"Professeur {professeur.get_prenom} {professeur.get_nom} modifié avec succès.")
+        professeur.set_matiereEnseigne(input("Nouvelle matière enseignée : ") or professeur.matiereEnseigne())
+        professeur.set_prochainCours(input("Nouveau sujet du prochain cours : ") or professeur.prochainCours())
+        professeur.set_sujetProchaineReunion(input("Nouveau sujet de la prochaine réunion : ") or professeur.sujetProchaineReunion())
+        Professeur.modifier(professeur)
+        print(f"Professeur {professeur.get_prenom()} {professeur.get_nom()} modifié avec succès.")
     else:
         print(f"Aucun professeur trouvé avec l'identifiant {identifiant}.")
 

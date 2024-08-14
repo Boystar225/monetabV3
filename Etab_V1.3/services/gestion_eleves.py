@@ -16,7 +16,7 @@ def ajouterEleve():
     print(f"Élève {prenom} {nom} ajouté avec succès.")
 
 def listerEleves():
-    eleves = Eleve.obtenirEleve()
+    eleves = Eleve.obtenir_eleve()
     if eleves:
         print("Liste des élèves :")
         for eleve in eleves:
@@ -30,12 +30,13 @@ def modifierEleve():
     if eleve:
         print(f"Modification de l'élève : {eleve}")
         # Demande des nouvelles informations
-        eleve.set_date_naissance  = input("Nouvelle date de naissance (YYYY-MM-DD) : ") or eleve.date_naissance 
-        eleve.set_ville = input("Nouvelle ville : ") or eleve.ville
-        eleve.set_prenom = input("Nouveau prénom : ") or eleve.prenom
-        eleve.set_nom = input("Nouveau nom : ") or eleve.nom
-        eleve.set_telephone = input("Nouveau téléphone : ") or eleve.telephone
-        eleve.set_classe = input("Nouvelle classe : ") or eleve.classe
+        eleve.date_naissance = input("Nouvelle date de naissance (YYYY-MM-DD) : ") or eleve.date_naissance
+        eleve.ville = input("Nouvelle ville : ") or eleve.ville
+        eleve.prenom = input("Nouveau prénom : ") or eleve.prenom
+        eleve.nom = input("Nouveau nom : ") or eleve.nom
+        eleve.telephone = input("Nouveau téléphone : ") or eleve.telephone
+        eleve.classe = input("Nouvelle classe : ") or eleve.classe
+        Eleve.modifier(eleve)
         print(f"Élève {eleve.prenom} {eleve.nom} modifié avec succès.")
     else:
         print(f"Aucun élève trouvé avec le matricule {matricule}.")
